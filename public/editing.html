@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Clicksby_Andre | Editing Services</title>
+    <meta name="description" content="Professional photo editing services. Upload your photos, get clean edits back, and your files are deleted within 48 hours." />
+
+    <!-- Fonts (free) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Reuse your main site CSS -->
+    <link rel="stylesheet" href="/style.css" />
+  
+  <!-- App icons (inline SVG) -->
+  <svg id="lrIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" style="display:none">
+    <defs>
+      <linearGradient id="lrG" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#1DA1F2"/>
+        <stop offset="1" stop-color="#7C3AED"/>
+      </linearGradient>
+    </defs>
+    <rect x="12" y="12" width="232" height="232" rx="32" fill="#0b1020"/>
+    <rect x="16" y="16" width="224" height="224" rx="28" fill="none" stroke="url(#lrG)" stroke-width="6"/>
+    <path d="M70 72h24v112h62v20H70V72z" fill="#eaf2ff"/>
+    <path d="M186 120c16 0 28 12 28 28v56h-24v-52c0-8-5-14-14-14s-14 6-14 14v52h-24v-56c0-16 12-28 28-28z" fill="#eaf2ff"/>
+  </svg>
+
+  <svg id="psIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true" style="display:none">
+    <defs>
+      <linearGradient id="psG" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#22C55E"/>
+        <stop offset="1" stop-color="#3B82F6"/>
+      </linearGradient>
+    </defs>
+    <rect x="12" y="12" width="232" height="232" rx="32" fill="#061019"/>
+    <rect x="16" y="16" width="224" height="224" rx="28" fill="none" stroke="url(#psG)" stroke-width="6"/>
+    <path d="M80 190V70h46c28 0 46 17 46 41s-18 41-46 41h-22v38H80zm24-58h19c15 0 24-8 24-21s-9-21-24-21h-19v42z" fill="#eafff4"/>
+    <path d="M214 116c-2-12-12-20-26-20-18 0-30 12-30 29v32h24v-30c0-8 5-14 13-14 7 0 11 4 12 10h23z" fill="#eafff4"/>
+  </svg>
+
+<style>
+
+/* Editing card icons (top-right) */
+.editCard { position: relative; }
+.editAppIcon{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+.editAppIcon svg{ width:100%; height:100%; display:block; }
+
+
+
+/* --- Brand blue for tool names --- */
+.toolBlue{ color:#31A8FF; font-weight:800; }
+
+/* --- Icon badge (top-right) --- */
+.editCard{ position:relative; }
+.editAppIcon{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,.28);
+  background: rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.editAppIcon svg{ width:100%; height:100%; display:block; }
+
+/* --- Make the Editing cards feel more premium --- */
+.editCard{
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+}
+.editCard::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(49,168,255,.55), rgba(34,197,94,.35), rgba(124,58,237,.45));
+  z-index:-1;
+  filter: blur(10px);
+  opacity: .65;
+}
+.editCard ul li::marker{ color:#31A8FF; }
+
+/* --- How it works: brighter + more attractive --- */
+#how { scroll-margin-top: 90px; }
+
+/* layout */
+.howFlow{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+/* arrows */
+.howArrow{
+  font-size:36px;
+  font-weight:800;
+  line-height:1;
+  color:#2F8CFF;
+  opacity:1;
+  margin-top:56px;
+  filter: drop-shadow(0 10px 16px rgba(47,140,255,.35));
+}
+
+/* base card */
+.howStep{
+  width: 210px;
+  min-height: 230px;
+  padding: 22px 18px 18px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #141821 0%, #0c0f16 100%);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 24px 55px rgba(0,0,0,.35);
+  transform: translateZ(0);
+}
+
+/* top glow bar */
+.howStep::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  right:16px;
+  top:14px;
+  height:6px;
+  border-radius:999px;
+  background: rgba(255,255,255,.16);
+}
+
+/* make sure text is NOT washed out */
+.howStep h3{
+  margin: 12px 0 8px;
+  font-size: 18px;
+  color: rgba(255,255,255,.98);
+  letter-spacing: .2px;
+}
+.howStep p{
+  margin:0;
+  color: rgba(255,255,255,.78);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* icon bubble */
+.howIcon{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 16px 30px rgba(0,0,0,.35);
+}
+.howIcon svg{
+  width: 24px;
+  height: 24px;
+  fill: rgba(255,255,255,.92);
+  opacity: 1;
+}
+
+/* step colors (1 Upload, 2 Editing, 3 Preview, 4 Delivery) */
+.howFlow > :nth-child(1).howStep::before{
+  background: linear-gradient(90deg, #2F8CFF, #00D4FF);
+}
+.howFlow > :nth-child(2).howStep::before{
+  background: linear-gradient(90deg, #A855F7, #6366F1);
+}
+.howFlow > :nth-child(3).howStep::before{
+  background: linear-gradient(90deg, #F59E0B, #F97316);
+}
+.howFlow > :nth-child(4).howStep::before{
+  background: linear-gradient(90deg, #22C55E, #16A34A);
+}
+
+/* icon bubble tint per step */
+.howFlow > :nth-child(1) .howIcon{
+  background: rgba(47,140,255,.14);
+  border-color: rgba(47,140,255,.35);
+}
+.howFlow > :nth-child(2) .howIcon{
+  background: rgba(168,85,247,.14);
+  border-color: rgba(168,85,247,.35);
+}
+.howFlow > :nth-child(3) .howIcon{
+  background: rgba(245,158,11,.14);
+  border-color: rgba(245,158,11,.35);
+}
+.howFlow > :nth-child(4) .howIcon{
+  background: rgba(34,197,94,.14);
+  border-color: rgba(34,197,94,.38);
+}
+
+/* hover */
+.howStep:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 34px 80px rgba(0,0,0,.48);
+}
+
+/* mobile spacing */
+@media (max-width: 860px){
+  .howArrow{ display:none; }
+  .howStep{ width:min(320px, 92vw); }
+}
+
+
+</style>
+</head>
+
+  <body class="page page--editing" data-page="editing">
+    <!-- HERO (full screen image) -->
+    <header class="hero hero--split" id="top">
+  <!-- Split images -->
+  <div class="heroSplit" aria-hidden="true">
+    <div class="heroSplit__half heroSplit__half--before"></div>
+    <div class="heroSplit__half heroSplit__half--after"></div>
+  </div>
+
+  <!-- Top nav (keeps simple + professional) -->
+  <div class="hero__top">
+    <div class="container hero__nav">
+      <a class="brand" href="/#top">
+        <span class="brand__name">Clicksby_Andre</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/#gallery">Main Site</a>
+        <a href="#services">Editing Services</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="container nav__mobile" id="mobileNav" hidden>
+      <a href="/#gallery">Main Site</a>
+      <a href="#services">Editing Services</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero text (top) -->
+  <div class="container hero__content hero__content--top">
+    <div class="hero__text hero__text--top">
+      <h1><span class="heroAccent">Bring out the true emotion</span> and feel through editing.</h1>
+      <p>Natural corrections, clean retouching, and a professional finish — without losing the real moment.</p>
+
+      <div class="hero__buttons">
+        <a class="btn btn--solid" href="#how">How it works</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom overlay: Adobe suite icons -->
+  <div class="heroBottomOverlay" aria-label="Adobe suite tools">
+    <div class="container heroTools">
+      <div class="heroTools__label">Results powered by Adobe Suite</div>
+      <div class="heroTools__icons" aria-hidden="true">
+        <img src="/images/icons/lightroom.png" alt="Lightroom" loading="lazy" />
+        <img src="/images/icons/photoshop.png" alt="Photoshop" loading="lazy" />
+        <img src="/images/icons/Firefly.png" alt="Adobe Firefly" loading="lazy" />
+        <img src="/images/icons/Adobe_Illustrator.png" alt="Adobe Illustrator" loading="lazy" />
+        <img src="/images/icons/After_Effects.png" alt="After Effects" loading="lazy" />
+        <img src="/images/icons/Premiere_Pro.png" alt="Premiere Pro" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__hint">
+    <span>Scroll</span>
+    <span class="hero__line" aria-hidden="true"></span>
+  </div>
+
+</header>
+
+<section class="adobeBar" id="adobe-suite">
+  <div class="container">
+    <p class="adobeBar__title">Results powered by Adobe Suite</p>
+    <div class="adobeBar__icons" aria-label="Adobe tools used">
+      <img src="/images/icons/photoshop.png" alt="Adobe Photoshop" loading="lazy">
+      <img src="/images/icons/lightroom.png" alt="Adobe Lightroom" loading="lazy">
+      <img src="/images/icons/Firefly.png" alt="Adobe Firefly" loading="lazy">
+      <img src="/images/icons/Adobe_Illustrator.png" alt="Adobe Illustrator" loading="lazy">
+      <img src="/images/icons/After_Effects.png" alt="Adobe After Effects" loading="lazy">
+      <img src="/images/icons/Premiere_Pro.png" alt="Adobe Premiere Pro" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+    <main>
+      <!-- EDITING SERVICES / WORKFLOW -->
+      <section class="section" id="workflow">
+        <div class="panel">
+          <div class="container section__head">
+            <h2>Editing Services</h2>
+            <p>Professional tools, simple process, and privacy respected.</p>
+          </div>
+
+          <div class="container">
+                      <div class="container">
+            <div class="editGrid editGrid--two">
+
+              <article class="editCard">
+                <h3><span class="toolBlue">Lightroom</span> Color &amp; Tone Edit</h3>
+      <div class="editAppIcon editAppIcon--lr" aria-hidden="true"><img class="editAppIcon__img" src="/images/icons/lightroom.png?v=2" alt="" /></div>
+                <p>
+                  Clean, natural edits using Adobe Lightroom — color correction, lighting adjustments,
+                  exposure, contrast, and a consistent “premium” look that still feels real.
+                </p>
+                <ul class="editList">
+                  <li>Color correction + lighting balance</li>
+                  <li>Skin tones that look natural</li>
+                  <li>Clean, sharp, social-ready exports</li>
+          <li>Resolution enhancement (upscaling) when needed</li>
+                </ul>
+</article>
+
+              <article class="editCard">
+                <h3><span class="toolBlue">Photoshop</span> Retouch &amp; Cleanup</h3>
+      <div class="editAppIcon editAppIcon--ps" aria-hidden="true"><img class="editAppIcon__img" src="/images/icons/photoshop.png?v=2" alt="" /></div>
+                <p>
+                  Advanced edits using Adobe Photoshop — retouching and detailed cleanup when you need more
+                  than color work. Great for removing distractions and polishing the final image.
+                </p>
+                <ul class="editList">
+                  <li>Retouching + blemish cleanup</li>
+                  <li>Object removal (content-aware cleanup)</li>
+                  <li>Background cleanup + refinements</li>
+          <li>AI-assisted cleanup (smart fill when appropriate)</li>
+                </ul>
+</article>
+
+            </div>
+          </div>
+        </div>
+      
+      <!-- HOW IT WORKS -->
+      <section class="section" id="how">
+        <div class="panel">
+          <div class="container section__head">
+            <h2>How it works</h2>
+            <p>A simple process from upload to delivery.</p>
+          </div>
+
+          <div class="container">
+            <div class="howFlow" role="list">
+
+              <div class="howStep" role="listitem">
+                <div class="howIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 20h14v-2H5v2zM12 2l5 5h-3v6h-4V7H7l5-5z"></path>
+                  </svg>
+                </div>
+                <h3>Upload</h3>
+                <p>Send your photo(s) + tell me the style you want.</p>
+              </div>
+
+              <div class="howArrow" aria-hidden="true">→</div>
+
+              <div class="howStep" role="listitem">
+                <div class="howIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M7 2h10v2H7V2zm0 4h10v16H7V6zm2 2v12h6V8H9z"></path>
+                  </svg>
+                </div>
+                <h3>Editing</h3>
+                <p>Lightroom + Photoshop edits depending on what you need.</p>
+              </div>
+
+              <div class="howArrow" aria-hidden="true">→</div>
+
+              <div class="howStep" role="listitem">
+                <div class="howIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"></path>
+                  </svg>
+                </div>
+                <h3>Preview</h3>
+                <p>You review the result and request any small adjustments.</p>
+              </div>
+
+              <div class="howArrow" aria-hidden="true">→</div>
+
+              <div class="howStep" role="listitem">
+                <div class="howIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M19 12h-2v5H7v-5H5l7-7 7 7zm-6 9h-2v-6h2v6z"></path>
+                  </svg>
+                </div>
+                <h3>Delivery</h3>
+                <p>Delivered via a private drive link. Files deleted within 48 hours.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+</section>
+
+      <!-- PRICING -->
+      <section class="section" id="pricing">
+        <div class="panel">
+          <div class="container section__head">
+            <h2>Pricing</h2>
+            <p>Simple tiers — choose the level of editing you want.</p>
+          </div>
+
+          <div class="container">
+            <div class="servicesSimple">
+              <article class="priceCard featured">
+                <div class="pill">Editing</div>
+                <h3>Basic Touch-Up</h3>
+                <p class="price">From $25</p>
+                <ul>
+                  <li>Color + lighting correction</li>
+                  <li>Clean, natural look</li>
+                  <li>Minor touch-ups</li>
+                  <li>Delivery within 48 hours</li>
+                </ul>
+              </article>
+
+              <article class="priceCard">
+                <div class="pill">Editing</div>
+                <h3>Premium Retouch</h3>
+                <p class="price">From $60</p>
+                <ul>
+                  <li>Advanced retouching (still natural)</li>
+                  <li>Background cleanup</li>
+                  <li>Detail work + refinements</li>
+                  <li>Delivery within 48 hours</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="servicesCta">
+              <a class="btn btn--solid" href="#contact">Request editing</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="panel">
+          <div class="container section__head">
+            <h2>Contact</h2>
+            <p></p>
+          </div>
+
+          <div class="container">
+            <p class="contactIntro">
+              Want edits done this week? Send an email or DM on Instagram and tell me what you want the final look to be.
+            </p>
+
+            <div class="contactIcons">
+              <a href="mailto:your@email.com" class="contactIcon" aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z"></path>
+                </svg>
+              </a>
+
+              <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="contactIcon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM18 6.5a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Clicksby_Andre</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script>
+      // year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // mobile nav
+      const toggle = document.getElementById("navToggle");
+      const mobile = document.getElementById("mobileNav");
+      if (toggle && mobile) {
+        toggle.addEventListener("click", () => {
+          const expanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!expanded));
+          mobile.hidden = expanded;
+        });
+      }
+    </script>
+  <style id="howOverride">
+/* Force override (last in file) */
+#how { scroll-margin-top: 90px; }
+
+#how .howFlow{
+  display:flex !important;
+  align-items:stretch !important;
+  justify-content:center !important;
+  gap:18px !important;
+  flex-wrap:wrap !important;
+  margin-top:22px !important;
+}
+
+#how .howArrow{
+  font-size:36px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  color:#2F8CFF !important;
+  opacity:1 !important;
+  margin-top:56px !important;
+  filter: drop-shadow(0 10px 16px rgba(47,140,255,.35)) !important;
+}
+
+/* Cards */
+#how .howStep{
+  width:210px !important;
+  min-height:230px !important;
+  padding:22px 18px 18px !important;
+  border-radius:20px !important;
+  position:relative !important;
+  overflow:hidden !important;
+
+  background: linear-gradient(180deg, #141821 0%, #0c0f16 100%) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  box-shadow: 0 24px 55px rgba(0,0,0,.35) !important;
+}
+
+/* Top glow bar */
+#how .howStep::before{
+  content:"" !important;
+  position:absolute !important;
+  left:16px !important;
+  right:16px !important;
+  top:14px !important;
+  height:6px !important;
+  border-radius:999px !important;
+  background: rgba(255,255,255,.16) !important;
+}
+
+/* Text */
+#how .howStep h3{
+  margin:12px 0 8px !important;
+  font-size:18px !important;
+  color: rgba(255,255,255,.98) !important;
+}
+#how .howStep p{
+  margin:0 !important;
+  color: rgba(255,255,255,.78) !important;
+  font-size:14px !important;
+  line-height:1.4 !important;
+}
+
+/* Icon bubble */
+#how .howIcon{
+  width:54px !important;
+  height:54px !important;
+  border-radius:16px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  box-shadow: 0 16px 30px rgba(0,0,0,.35) !important;
+}
+#how .howIcon svg{
+  width:24px !important;
+  height:24px !important;
+  fill: rgba(255,255,255,.92) !important;
+  opacity:1 !important;
+}
+
+/* Step accent colors */
+#how .howFlow > :nth-child(1).howStep::before{ background: linear-gradient(90deg, #2F8CFF, #00D4FF) !important; }
+#how .howFlow > :nth-child(2).howStep::before{ background: linear-gradient(90deg, #A855F7, #6366F1) !important; }
+#how .howFlow > :nth-child(3).howStep::before{ background: linear-gradient(90deg, #F59E0B, #F97316) !important; }
+#how .howFlow > :nth-child(4).howStep::before{ background: linear-gradient(90deg, #22C55E, #16A34A) !important; }
+
+#how .howFlow > :nth-child(1) .howIcon{ background: rgba(47,140,255,.14) !important; border-color: rgba(47,140,255,.35) !important; }
+#how .howFlow > :nth-child(2) .howIcon{ background: rgba(168,85,247,.14) !important; border-color: rgba(168,85,247,.35) !important; }
+#how .howFlow > :nth-child(3) .howIcon{ background: rgba(245,158,11,.14) !important; border-color: rgba(245,158,11,.35) !important; }
+#how .howFlow > :nth-child(4) .howIcon{ background: rgba(34,197,94,.14) !important; border-color: rgba(34,197,94,.38) !important; }
+
+/* Hover pop */
+#how .howStep:hover{
+  transform: translateY(-6px) !important;
+  box-shadow: 0 34px 80px rgba(0,0,0,.48) !important;
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  #how .howArrow{ display:none !important; }
+  #how .howStep{ width:min(320px, 92vw) !important; }
+}
+</style>
+
+</body>
+</html>

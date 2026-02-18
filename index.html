@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clicksby_Andre | Photography</title>
+    <meta name="description" content="Affordable, high-quality photography for headshots and events. View my work, pricing, and contact." />
+
+    <!-- Fonts (free) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  </head>
+  <body>
+    <!-- HERO (full screen image) -->
+    <header class="hero" id="top">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__top">
+        <div class="container hero__nav">
+          <a class="brand" href="#top">
+            <span class="brand__name">Clicksby_Andre</span>
+          </a>
+
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="#gallery">Gallery</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+          <a href="#services">Drone Rental</a>
+            <a href="#contact" class="nav__cta">Contact</a>
+          </nav>
+
+          <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <div class="container nav__mobile" id="mobileNav" hidden>
+          <a href="#gallery">Gallery</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1>Photography + drone coverage for solo shoots and events — affordable, clean, and professional.</h1>
+          <p>From headshots and portraits to event coverage and drone shots — I’ll help you get sharp images that feel premium.</p>
+          <div class="hero__buttons">
+            <a class="btn btn--solid" href="#contact">Book a shoot</a>
+            <a class="btn btn--ghost" href="#gallery">View gallery</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__hint">
+        <span>Scroll</span>
+        <span class="hero__line" aria-hidden="true"></span>
+      </div>
+    
+    
+
+    
+    <div class="heroEditing" aria-label="Editing service">
+      <p class="heroEditing__text">Already have the photos and just need a professional touch-up?</p>
+      <a class="btn btn--solid heroEditing__btn" href="/editing.html">Editing services</a>
+    </div>
+
+<div class="heroBottomNote">
+      All photographs displayed on this website are original works created and owned by Clicksby_Andre. ©
+    </div>
+</header>
+
+    <main>
+      <!-- GALLERY (collage) -->
+      <section class="section" id="gallery">
+        <div class="panel">
+        <div class="container section__head">
+          <h2>Gallery</h2>
+          <p>A quick collage of my work. Click any photo to view it larger.</p>
+        </div>
+
+        <div class="filters" aria-label="Gallery categories">
+          <button class="chip is-active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="individual" type="button">Individual</button>
+          <button class="chip" data-filter="events" type="button">Events</button>
+          <button class="chip" data-filter="drone" type="button">Drone</button>
+        </div>
+
+        <div class="collage" id="galleryGrid">
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image10.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image10.jpg" /></button>
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image2.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image2.jpg" /></button>
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image4.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image4.jpg" /></button>
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image5.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image5.jpg" /></button>
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image7.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image7.jpg" /></button>
+          <button class="shot" data-category="individual" data-full="/images/gallery/personal/image9.jpg"><img alt="individual photo" loading="lazy" src="/images/gallery/personal/image9.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/event.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/event.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/event2.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/event2.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/event4.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/event4.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/event5.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/event5.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/event6.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/event6.jpg" /></button>
+          <button class="shot" data-category="events" data-full="/images/gallery/events/hero-main.jpg"><img alt="events photo" loading="lazy" src="/images/gallery/events/hero-main.jpg" /></button>
+          <button class="shot" data-category="drone" data-full="/images/gallery/drone/drone.jpg"><img alt="drone photo" loading="lazy" src="/images/gallery/drone/drone.jpg" /></button>
+          <button class="shot" data-category="drone" data-full="/images/gallery/drone/drone1.jpg"><img alt="drone photo" loading="lazy" src="/images/gallery/drone/drone1.jpg" /></button>
+          <button class="shot" data-category="drone" data-full="/images/gallery/drone/drone2.jpg"><img alt="drone photo" loading="lazy" src="/images/gallery/drone/drone2.jpg" /></button>
+        </div>
+      
+      </div>
+        </div>
+</section>
+
+      
+    <!-- SERVICES & PRICING -->
+      <!-- SERVICES & PRICING -->
+      <!-- SERVICES & PRICING -->
+      <section class="section" id="services">
+        <div class="panel">
+          <div class="container section__head">
+            <h2>Services &amp; Pricing</h2>
+            <p>Simple pricing. Professional results.</p>
+          </div>
+
+          <div class="servicesSimple">
+            <!-- Photography Card -->
+            <article class="priceCard featured">
+              <div class="pill">Photography</div>
+              <h3>Event &amp; Portrait Photography</h3>
+              <p class="price">$60</p>
+              <ul>
+                <li>No strict time limit — coverage depends on the event</li>
+                <li>Edited photos</li>
+                <li>Delivered within 48 hours</li>
+                <li>Cloud storage access for 7 days</li>
+              </ul>
+              
+            </article>
+
+            <!-- Drone Card -->
+            <article class="priceCard">
+              <div class="pill">Drone</div>
+              <h3>Drone Photo &amp; Video Coverage</h3>
+              <p class="price">$100</p>
+              <ul>
+                <li>60 minutes</li>
+                <li>Shot according to your needs &amp; preferences</li>
+                <li>Edited or RAW photos &amp; videos</li>
+                <li>Cloud storage access for 7 days</li>
+              </ul>
+              
+            </article>
+          </div>
+          <div class="servicesCta">
+            <a class="btn btn--solid" href="#contact">Book a shoot</a>
+          </div>
+
+        </div>
+      
+          
+        </section>
+
+      
+      <!-- ABOUT -->
+      
+
+
+      <!-- CONTACT -->
+      <section class="section" id="about">
+  <div class="panel">
+    <div class="container section__head">
+      <h2>About</h2>
+      <p></p>
+    </div>
+
+    <div class="container">
+      <div class="sectionCard">
+        <div class="aboutSingleCard">
+          <p>
+            I’m Andre, a Grand Valley State University student with a real passion for photography.
+            What started as something creative on the side quickly turned into helping friends, classmates,
+            and campus organizations capture moments that actually look professional.
+          </p>
+
+          <p>
+            My focus is simple: clean edits, sharp images, and affordable pricing — especially for students and campus groups.
+            Whether it’s headshots, club events, or personal shoots, I aim to make the process easy and stress-free while delivering
+            photos you’ll actually want to post.
+          </p>
+
+          <p>
+            This isn’t a big studio — it’s personal, flexible, and built around what you need.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+<div class="panel">
+        <div class="container section__head">
+          <h2>Contact</h2>
+          <p></p>
+        </div>
+
+        <div class="contactWrap">
+          <div class="container">
+          
+        </div>
+      
+      </div>
+
+  
+      <p class="contactIntro">
+        Ready to plan your shoot? Send an email or DM on Instagram to discuss details, availability, and pricing.
+      </p>
+
+      <div class="contactIcons">
+    <a href="mailto:your@email.com" class="contactIcon" aria-label="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z"></path>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="contactIcon" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM18 6.5a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"></path>
+      </svg>
+    </a>
+  </div>
+
+</section>
+
+      <!-- LIGHTBOX -->
+      <dialog class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close">×</button>
+        <img id="lightboxImg" alt="Expanded gallery image" />
+      </dialog>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Clicksby_Andre</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
