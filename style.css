@@ -37,7 +37,7 @@ img{max-width:100%; display:block}
   /* HERO IMAGE PLACEHOLDER:
      Later we’ll replace this with your own photo stored locally.
   */
-  background-image: url("/images/hero-main.jpg");
+  background-image: url("./images/hero-main.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1176,7 +1176,7 @@ textarea{resize:vertical; min-height: 150px}
 
 /* Use a hero image for editing page */
 .hero--editing{
-  background-image: url("/images/hero-main.jpg");
+  background-image: url("./images/hero-main.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1715,10 +1715,10 @@ body[data-page="editing"] .heroSplit__half{
    /public/images/editing/before.jpg (unedited)
    /public/images/editing/after.jpg (edited) */
 body[data-page="editing"] .heroSplit__half--before{
-  background-image: url("/images/editing/before.jpg");
+  background-image: url("./images/editing/before.jpg");
 }
 body[data-page="editing"] .heroSplit__half--after{
-  background-image: url("/images/editing/after.jpg");
+  background-image: url("./images/editing/after.jpg");
 }
 
 /* Keep existing content above images */
