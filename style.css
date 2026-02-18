@@ -457,6 +457,7 @@ textarea{resize:vertical; min-height: 150px}
   width: 100% !important;
   height: auto !important;          /* <-- no fixed height */
   object-fit: contain !important;   /* <-- no cropping */
+  max-height: 340px !important;      /* <-- keeps collage from becoming huge */
   transform: none !important;
 }
 
