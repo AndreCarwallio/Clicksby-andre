@@ -2636,3 +2636,11 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
 .navEditing:hover{
   background:#0d66d0;
 }
+
+/* Hide editing box on mobile */
+
+@media (max-width: 768px) {
+  .heroEditing {
+    display: none;
+  }
+}
