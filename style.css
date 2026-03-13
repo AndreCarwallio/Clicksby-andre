@@ -2621,3 +2621,18 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
     font-size: 0.95rem;
   }
 }
+
+/* Editing services menu button */
+
+.navEditing{
+  background:#1473E6;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  border-radius:12px;
+  border:none;
+}
+
+.navEditing:hover{
+  background:#0d66d0;
+}
