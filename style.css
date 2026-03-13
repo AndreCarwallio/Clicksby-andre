@@ -2410,7 +2410,7 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
   .hero__content {
     min-height: auto;
     display: block;
-    padding: 48px 0 18px;
+    padding: 48px 0 60px;
   }
 
   .hero__text {
@@ -2473,8 +2473,9 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
   }
 
   .heroBottomNote {
-    width: min(92%, 760px);
-    margin: 0 auto 18px;
+    position: static;
+    width: min(92%, 500px);
+    margin: 20px auto 20px;
     padding: 12px 14px;
     border-radius: 16px;
     text-align: center;
