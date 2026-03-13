@@ -42,6 +42,7 @@
         <div class="container nav__mobile" id="mobileNav" hidden>
           <a href="#gallery">Gallery</a>
           <a href="#services">Services</a>
+          <a href="#services">Drone Rental</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
@@ -49,7 +50,9 @@
 
       <div class="container hero__content">
         <div class="hero__text">
-          <h1>Photography + drone coverage for solo shoots and events — affordable, clean, and professional.</h1>
+          <h1><span class="heroTitle--desktop">Photography + drone coverage for solo shoots and events — affordable, clean, and professional.</span>
+            <span class="heroTitle--mobile">Photography + drone coverage<br>for solo shoots and events.</span>
+          </h1>
           <p>From headshots and portraits to event coverage and drone shots — I’ll help you get sharp images that feel premium.</p>
           <div class="hero__buttons">
             <a class="btn btn--solid" href="#contact">Book a shoot</a>
@@ -250,5 +253,32 @@
     </footer>
 
     <script type="module" src="./main.js"></script>
+
+    <script>
+  const navToggle = document.getElementById("navToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener("click", () => {
+      const isHidden = mobileNav.hasAttribute("hidden");
+
+      if (isHidden) {
+        mobileNav.removeAttribute("hidden");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else {
+        mobileNav.setAttribute("hidden", "");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileNav.setAttribute("hidden", "");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>
+
   </body>
 </html>
