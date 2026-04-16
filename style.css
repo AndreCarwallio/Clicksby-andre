@@ -2645,3 +2645,26 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
     display: none;
   }
 }
+
+
+/* ===== Force gallery filters clickable on live site ===== */
+.filters{
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+.filters .chip{
+  position: relative !important;
+  z-index: 51 !important;
+  pointer-events: auto !important;
+}
+
+#galleryGrid{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#galleryGrid .shot{
+  position: relative !important;
+  z-index: 1 !important;
+}

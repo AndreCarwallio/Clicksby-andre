@@ -259,7 +259,7 @@
       </div>
     </footer>
 
-    <script type="module" src="./main.js?v=2"></script>
+    <script type="module" src="./main.js?v=3"></script>
 
     <script>
   const navToggle = document.getElementById("navToggle");
@@ -287,5 +287,44 @@
   }
 </script>
 
-  </body>
+  
+    <script id="galleryFilterFallback">
+      document.addEventListener("DOMContentLoaded", function () {
+        const chips = Array.from(document.querySelectorAll(".filters .chip"));
+        const shots = Array.from(document.querySelectorAll("#galleryGrid .shot"));
+
+        if (!chips.length || !shots.length) return;
+
+        function applyFilter(filter) {
+          shots.forEach((shot) => {
+            const cat = (shot.dataset.category || "").toLowerCase();
+            let show = false;
+
+            if (filter === "all") {
+              show = (cat === "individual" || cat === "graduation" || cat === "events" || cat === "drone");
+            } else {
+              show = (cat === filter);
+            }
+
+            shot.style.display = show ? "" : "none";
+          });
+
+          chips.forEach((chip) => {
+            chip.classList.toggle("is-active", (chip.dataset.filter || "").toLowerCase() === filter);
+          });
+        }
+
+        chips.forEach((chip) => {
+          chip.addEventListener("click", function (e) {
+            e.preventDefault();
+            const filter = (chip.dataset.filter || "all").toLowerCase();
+            applyFilter(filter);
+          });
+        });
+
+        applyFilter("all");
+      });
+    </script>
+    
+</body>
 </html>
