@@ -1,3 +1,15 @@
+// Force homepage to open at the top
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual'
+}
+
+window.addEventListener('load', () => {
+  if (window.location.hash === '#gallery') {
+    history.replaceState(null, '', window.location.pathname)
+  }
+  window.scrollTo(0, 0)
+})
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle')
 const mobileNav = document.getElementById('mobileNav')
