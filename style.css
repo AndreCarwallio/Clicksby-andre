@@ -2887,3 +2887,54 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
     max-width: 300px !important;
   }
 }
+
+/* =========================================
+   EDITING PAGE — HERO BOTTOM CTA
+   Replaces duplicate Adobe overlay in hero
+   ========================================= */
+
+body[data-page="editing"] .heroBottomCta,
+body.page--editing .heroBottomCta {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 78px;
+  z-index: 6;
+  width: min(92%, 340px);
+  display: flex;
+  justify-content: center;
+}
+
+body[data-page="editing"] .heroBottomCta .btn,
+body.page--editing .heroBottomCta .btn {
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+}
+
+body[data-page="editing"] .hero__hint,
+body.page--editing .hero__hint {
+  bottom: 18px !important;
+}
+
+@media (max-width: 768px) {
+  body[data-page="editing"] .hero__content--top,
+  body.page--editing .hero__content--top {
+    padding: 110px 0 170px !important;
+  }
+
+  body[data-page="editing"] .heroBottomCta,
+  body.page--editing .heroBottomCta {
+    bottom: 78px;
+    width: min(92%, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-page="editing"] .heroBottomCta,
+  body.page--editing .heroBottomCta {
+    bottom: 74px;
+    width: min(92%, 300px);
+  }
+}
