@@ -261,30 +261,6 @@
 
     <script type="module" src="./main.js?v=2"></script>
 
-    <script>
-  const navToggle = document.getElementById("navToggle");
-  const mobileNav = document.getElementById("mobileNav");
-
-  if (navToggle && mobileNav) {
-    navToggle.addEventListener("click", () => {
-      const isHidden = mobileNav.hasAttribute("hidden");
-
-      if (isHidden) {
-        mobileNav.removeAttribute("hidden");
-        navToggle.setAttribute("aria-expanded", "true");
-      } else {
-        mobileNav.setAttribute("hidden", "");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    mobileNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileNav.setAttribute("hidden", "");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-</script>
+    
 </body>
 </html>
