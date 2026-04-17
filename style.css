@@ -2716,3 +2716,174 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
     0 8px 22px rgba(24, 119, 242, 0.5),
     0 0 22px rgba(24, 119, 242, 0.6);
 }
+
+/* =========================================
+   EDITING PAGE — MOBILE ALIGNMENT FIX
+   Paste at VERY BOTTOM of style.css
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* ---------- HERO ---------- */
+  body[data-page="editing"] .hero--split,
+  body.page--editing .hero--split {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  body[data-page="editing"] .hero__content--top,
+  body.page--editing .hero__content--top {
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 110px 0 120px !important;
+  }
+
+  body[data-page="editing"] .hero__text--top,
+  body.page--editing .hero__text--top {
+    width: min(92%, 420px) !important;
+    margin: 0 auto !important;
+    padding: 28px 18px 22px !important;
+    text-align: center !important;
+    border-radius: 24px !important;
+    background: rgba(7, 15, 28, 0.50) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.30) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+
+  body[data-page="editing"] .hero__text--top h1,
+  body.page--editing .hero__text--top h1 {
+    margin: 0 0 14px !important;
+    font-size: clamp(2.1rem, 10vw, 3.2rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  body[data-page="editing"] .hero__text--top p,
+  body.page--editing .hero__text--top p {
+    margin: 0 0 18px !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  body[data-page="editing"] .hero__text--top .hero__buttons,
+  body.page--editing .hero__text--top .hero__buttons {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+
+  body[data-page="editing"] .hero__text--top .hero__buttons .btn,
+  body.page--editing .hero__text--top .hero__buttons .btn {
+    width: min(100%, 300px) !important;
+  }
+
+  body[data-page="editing"] .hero__hint,
+  body.page--editing .hero__hint {
+    bottom: 18px !important;
+  }
+
+  /* ---------- HOW IT WORKS PANEL ---------- */
+  body[data-page="editing"] #how .panel,
+  body.page--editing #how .panel {
+    overflow: hidden !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body[data-page="editing"] #how .container,
+  body.page--editing #how .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  body[data-page="editing"] #how .section__head,
+  body.page--editing #how .section__head {
+    margin-bottom: 18px !important;
+  }
+
+  body[data-page="editing"] #how .section__head h2,
+  body.page--editing #how .section__head h2 {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.06 !important;
+    text-align: center !important;
+  }
+
+  body[data-page="editing"] #how .section__head p,
+  body.page--editing #how .section__head p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  body[data-page="editing"] #how .howFlow,
+  body.page--editing #how .howFlow {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  body[data-page="editing"] #how .howArrow,
+  body.page--editing #how .howArrow {
+    display: none !important;
+  }
+
+  body[data-page="editing"] #how .howStep,
+  body.page--editing #how .howStep {
+    width: min(100%, 320px) !important;
+    max-width: 320px !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    padding: 20px 16px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  body[data-page="editing"] #how .howStep h3,
+  body.page--editing #how .howStep h3 {
+    margin: 12px 0 8px !important;
+    font-size: 17px !important;
+    text-align: center !important;
+  }
+
+  body[data-page="editing"] #how .howStep p,
+  body.page--editing #how .howStep p {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  body[data-page="editing"] #how .howIcon,
+  body.page--editing #how .howIcon {
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-page="editing"] .hero__content--top,
+  body.page--editing .hero__content--top {
+    padding: 100px 0 110px !important;
+  }
+
+  body[data-page="editing"] .hero__text--top,
+  body.page--editing .hero__text--top {
+    width: min(94%, 360px) !important;
+    padding: 24px 16px 20px !important;
+  }
+
+  body[data-page="editing"] #how .howStep,
+  body.page--editing #how .howStep {
+    width: min(100%, 300px) !important;
+    max-width: 300px !important;
+  }
+}
