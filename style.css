@@ -720,58 +720,6 @@ textarea{resize:vertical; min-height: 150px}
   margin-top: 40px !important;
 }
 
-/* Bottom copyright note */
-.heroBottomNote{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 140px;  /* moved much higher */
-  z-index: 5;
-
-  width: min(980px, calc(100% - 28px));
-  padding: 10px 14px;
-
-  font-size: 12.5px;
-  line-height: 1.45;
-  text-align: center;
-  color: rgba(255,255,255,.92);
-
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Slight fade so it feels premium */
-.heroBottomNote{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 140px;  /* moved much higher */
-  z-index: 5;
-
-  width: min(980px, calc(100% - 28px));
-  padding: 10px 14px;
-
-  font-size: 12.5px;
-  line-height: 1.45;
-  text-align: center;
-  color: rgba(255,255,255,.92);
-
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Ensure proper spacing */
-.hero__content{
-  padding-bottom: 60px;
-}
 
 
 /* === Force hero bottom note to always be visible === */
@@ -783,29 +731,6 @@ textarea{resize:vertical; min-height: 150px}
   position: relative;
 }
 
-/* Pin it to the bottom of the hero */
-.heroBottomNote{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 140px;  /* moved much higher */
-  z-index: 5;
-
-  width: min(980px, calc(100% - 28px));
-  padding: 10px 14px;
-
-  font-size: 12.5px;
-  line-height: 1.45;
-  text-align: center;
-  color: rgba(255,255,255,.92);
-
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
 
 /* Give the scroll hint some room above it if it overlaps */
 .scrollHint{
@@ -2372,11 +2297,13 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
    EXACT MOBILE HERO FIX
    ========================= */
 
-.heroEditing,
-.heroBottomNote {
-  position: relative;
-  z-index: 2;
+/* Keep hero editing promo above note */
+.heroEditing {
+  position: absolute;
+  z-index: 7;
 }
+
+
 
 @media (max-width: 768px) {
   .hero {
@@ -2427,99 +2354,61 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
   }
 
   .hero__text p {
-    font-size: 0.98rem;
+    font-size: 15px;
     line-height: 1.5;
     margin: 0 0 18px;
-    max-width: 100%;
+    padding: 0 8px;
   }
 
   .hero__buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
     width: 100%;
-  }
-
-  .hero__buttons .btn {
-    width: min(100%, 300px);
-    min-height: 50px;
-  }
-
-  .hero__hint {
-    display: none;
-  }
-
-  .heroEditing {
-    width: min(92%, 360px);
-    margin: 18px auto 12px;
-    padding: 16px;
-    border-radius: 18px;
-    background: rgba(0, 0, 0, 0.38);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,.14);
-    text-align: center;
-  }
-
-  .heroEditing__text {
-    margin: 0 0 12px;
-    color: rgba(255,255,255,.92);
-    font-size: 0.95rem;
-    line-height: 1.45;
-  }
-
-  .heroEditing__btn {
-    width: min(100%, 260px);
+    max-width: 320px;
     margin: 0 auto;
   }
 
-  .heroBottomNote {
-    position: static;
-    width: min(92%, 500px);
-    margin: 20px auto 20px;
-    padding: 12px 14px;
-    border-radius: 16px;
-    text-align: center;
-    font-size: 0.78rem;
-    line-height: 1.4;
-    color: rgba(255,255,255,.86);
-    background: rgba(0, 0, 0, 0.32);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,.12);
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: min(100%, calc(100% - 28px));
-  }
-
-  .hero__content {
-    padding: 36px 0 14px;
-  }
-
-  .hero__text h1 {
-    font-size: clamp(1.8rem, 9.6vw, 2.55rem);
-    line-height: 1.05;
-  }
-
-  .hero__text p {
-    font-size: 0.93rem;
+  .hero__buttons .btn {
+    width: 100%;
   }
 
   .heroEditing {
-    width: 100%;
-    padding: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 185px;
+    width: calc(100% - 28px);
+    max-width: 520px;
+    padding: 0 8px;
+    text-align: center;
   }
 
   .heroEditing__text {
-    font-size: 0.9rem;
+    font-size: clamp(1rem, 4.8vw, 1.3rem);
+    line-height: 1.35;
+    margin: 0;
   }
 
-  .heroBottomNote {
+  .heroEditing__btn {
     width: 100%;
-    font-size: 0.74rem;
-    padding: 11px 12px;
+    max-width: 260px;
+    margin: 0 auto;
   }
+
+  
+
+  .hero__hint {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroEditing {
+    bottom: 175px;
+    width: calc(100% - 24px);
+  }
+
+  
 }
 
 /* =========================
@@ -2644,4 +2533,186 @@ body[data-page="editing"] #how .howStep:nth-of-type(4) .howIcon{ background: rgb
   .heroEditing {
     display: none;
   }
+}
+
+
+/* ===== FIX: Hero Bottom Note Position ===== */
+
+.heroBottomNote{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px; /* sits BELOW buttons now */
+  z-index: 5;
+
+  width: calc(100% - 24px);
+  max-width: 520px;
+
+  padding: 10px 14px;
+
+  font-size: 11.5px;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255,255,255,.92);
+
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+
+  backdrop-filter: blur(8px);
+}
+
+/* Desktop tweak */
+@media (min-width: 769px){
+  .heroBottomNote{
+    bottom: 60px;
+    font-size: 12.5px;
+    max-width: 700px;
+  }
+}
+
+/* =========================
+   FINAL MOBILE HERO NOTE FIX
+   Paste at VERY BOTTOM of style.css
+   ========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .hero__content {
+    padding-bottom: 260px !important;
+  }
+
+  .heroEditing {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 150px !important;
+    width: min(92%, 360px) !important;
+    margin: 0 !important;
+    z-index: 6 !important;
+  }
+
+  .heroBottomNote {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 78px !important;
+    width: min(92%, 520px) !important;
+    max-width: 520px !important;
+    margin: 0 !important;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    text-align: center !important;
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+    color: rgba(255,255,255,.86) !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    z-index: 7 !important;
+  }
+
+  .hero__hint {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 16px !important;
+    z-index: 5 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__content {
+    padding-bottom: 250px !important;
+  }
+
+  .heroEditing {
+    bottom: 145px !important;
+    width: min(92%, 340px) !important;
+  }
+
+  .heroBottomNote {
+    bottom: 74px !important;
+    width: min(94%, 420px) !important;
+    font-size: 0.74rem !important;
+    padding: 11px 12px !important;
+  }
+
+  .hero__hint {
+    bottom: 14px !important;
+  }
+}
+
+/* =========================
+   MOVE HERO BUTTONS LOWER
+   Paste at VERY BOTTOM of style.css
+   ========================= */
+
+@media (max-width: 768px) {
+  .hero__content {
+    position: relative !important;
+    min-height: calc(100vh - 76px) !important;
+    padding-bottom: 260px !important;
+  }
+
+  .hero__text {
+    position: static !important;
+  }
+
+  .hero__buttons {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 140px !important; /* sits right above copyright note */
+    width: min(92%, 360px) !important;
+    max-width: 360px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    z-index: 6 !important;
+  }
+
+  .hero__buttons .btn {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__buttons {
+    bottom: 136px !important;
+    width: min(92%, 340px) !important;
+  }
+}
+
+/* =========================
+   GRADUATION BUTTON ALWAYS BLUE
+   ========================= */
+
+.chip.graduation-highlight {
+  background: #1877f2 !important;
+  color: #ffffff !important;
+  border: none !important;
+
+  box-shadow:
+    0 0 0 2px rgba(24, 119, 242, 0.35),
+    0 6px 18px rgba(24, 119, 242, 0.4),
+    0 0 18px rgba(24, 119, 242, 0.5);
+
+  transform: translateY(-1px);
+  transition: all 0.25s ease;
+}
+
+/* optional hover */
+.chip.graduation-highlight:hover {
+  box-shadow:
+    0 0 0 2px rgba(24, 119, 242, 0.45),
+    0 8px 22px rgba(24, 119, 242, 0.5),
+    0 0 22px rgba(24, 119, 242, 0.6);
 }
